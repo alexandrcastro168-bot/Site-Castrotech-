@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CastroTech</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins', sans-serif;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:#0f172a;
+      color:white;
+    }
+
+    header{
+      position:fixed;
+      top:0;
+      width:100%;
+      padding:20px 8%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      background:rgba(15,23,42,0.95);
+      backdrop-filter:blur(10px);
+      z-index:1000;
+      border-bottom:1px solid rgba(255,255,255,0.05);
+    }
+
+    .logo{
+      font-size:28px;
+      font-weight:700;
+      color:#22c55e;
+      text-shadow:0 0 10px #22c55e;
+    }
+
+    nav a{
+      color:white;
+      text-decoration:none;
+      margin-left:25px;
+      transition:0.3s;
+      font-weight:500;
+    }
+
+    nav a:hover{
+      color:#22c55e;
+    }
+
+    section{
+      padding:120px 8%;
+    }
+
+    .hero{
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      background:radial-gradient(circle at center, rgba(34,197,94,0.15), transparent 60%);
+    }
+
+    .hero-content h1{
+      font-size:70px;
+      color:#22c55e;
+      text-shadow:0 0 25px #22c55e;
+      margin-bottom:15px;
+    }
+
+    .hero-content p{
+      font-size:24px;
+      color:#cbd5e1;
+      margin-bottom:30px;
+    }
+
+    .btns{
+      display:flex;
+      justify-content:center;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      padding:15px 30px;
+      border:none;
+      border-radius:50px;
+      background:#22c55e;
+      color:white;
+      font-size:18px;
+      cursor:pointer;
+      text-decoration:none;
+      transition:0.3s;
+      box-shadow:0 0 20px rgba(34,197,94,0.4);
+      display:inline-block;
+      text-align:center;
+    }
+
+    .btn:hover{
+      transform:translateY(-5px);
+      background:#16a34a;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:60px;
+    }
+
+    .section-title h2{
+      font-size:45px;
+      color:#22c55e;
+    }
+
+    .section-title p{
+      color:#94a3b8;
+      margin-top:10px;
+    }
+
+    .about{
+      text-align:center;
+      max-width:900px;
+      margin:auto;
+      line-height:1.8;
+      color:#cbd5e1;
+      font-size:18px;
+    }
+
+    .apps-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(300px,1fr));
+      gap:25px;
+    }
+
+    .app-card{
+      background:#1e293b;
+      padding:30px;
+      border-radius:25px;
+      transition:0.3s;
+      border:1px solid rgba(255,255,255,0.05);
+      box-shadow:0 0 20px rgba(0,0,0,0.3);
+    }
+
+    .app-card:hover{
+      transform:translateY(-10px);
+      border-color:#22c55e;
+      box-shadow:0 0 25px rgba(34,197,94,0.2);
+    }
+
+    .app-card h3{
+      color:#22c55e;
+      margin-bottom:15px;
+      font-size:28px;
+    }
+
+    .app-card p{
+      color:#cbd5e1;
+      margin-bottom:20px;
+      line-height:1.7;
+    }
+
+    .services{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
+      gap:25px;
+    }
+
+    .service{
+      background:#1e293b;
+      padding:30px;
+      border-radius:20px;
+      text-align:center;
+      transition:0.3s;
+    }
+
+    .service:hover{
+      transform:scale(1.03);
+    }
+
+    .service h3{
+      margin-top:15px;
+      color:#22c55e;
+    }
+
+    .contact{
+      text-align:center;
+    }
+
+    .contact p{
+      margin-bottom:25px;
+      color:#cbd5e1;
+    }
+
+    footer{
+      background:#020617;
+      text-align:center;
+      padding:30px;
+      color:#94a3b8;
+      border-top:1px solid rgba(255,255,255,0.05);
+    }
+
+    .glow{
+      animation:glow 2s infinite alternate;
+    }
+
+    @keyframes glow{
+
+      from{
+        text-shadow:0 0 10px #22c55e;
+      }
+
+      to{
+        text-shadow:0 0 30px #22c55e;
+      }
+
+    }
+
+    @media(max-width:768px){
+
+      .hero-content h1{
+        font-size:50px;
+      }
+
+      .hero-content p{
+        font-size:18px;
+      }
+
+      nav{
+        display:none;
+      }
+
+    }
+
+  </style>
+</head>
+<body>
+
+<header>
+
+  <div class="logo glow">CastroTech</div>
+
+  <nav>
+    <a href="#sobre">Sobre</a>
+    <a href="#apps">Apps</a>
+    <a href="#servicos">Serviços</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+
+</header>
+
+<!-- HERO -->
+
+<section class="hero">
+
+  <div class="hero-content">
+
+    <h1 class="glow">CASTROTECH</h1>
+
+    <p>
+      Criando APPs para soluções diárias
+    </p>
+
+    <div class="btns">
+
+      <a href="#apps" class="btn">
+        Ver Apps
+      </a>
+
+      <a href="#contacto" class="btn">
+        Contactar
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- SOBRE -->
+
+<section id="sobre">
+
+  <div class="section-title">
+    <h2>Sobre Nós</h2>
+    <p>Startup Tecnológica Angolana 🇦🇴</p>
+  </div>
+
+  <div class="about">
+
+    A CastroTech é uma startup focada no desenvolvimento de aplicativos,
+    websites e soluções digitais modernas para resolver problemas reais
+    do dia a dia em Angola e África.
+
+    Criamos tecnologia simples, rápida e inteligente para estudantes,
+    comerciantes, empresas e pessoas comuns.
+
+  </div>
+
+</section>
+
+<!-- APPS -->
+
+<section id="apps">
+
+  <div class="section-title">
+    <h2>Nossos Apps</h2>
+    <p>Projetos criados pela CastroTech</p>
+  </div>
+
+  <div class="apps-grid">
+
+    <!-- APP -->
+
+    <div class="app-card">
+
+      <h3>KumbuTroco</h3>
+
+      <p>
+        Aplicativo inteligente para cálculo rápido de troco
+        em cantinas, lojas e pequenos negócios.
+      </p>
+
+      <!-- ABRIR APP -->
+
+      <a href="https://alexandrcastro168-bot.github.io/Calculadora-Dan/"
+         class="btn"
+         target="_blank">
+
+         Abrir App
+
+      </a>
+
+      <br><br>
+
+      <!-- DOWNLOAD APK -->
+
+      <a href="https://kodular.app/CUX-ASW"
+         class="btn"
+         target="_blank">
+
+         Download APK
+
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- SERVIÇOS -->
+
+<section id="servicos">
+
+  <div class="section-title">
+    <h2>Serviços</h2>
+    <p>O que fazemos</p>
+  </div>
+
+  <div class="services">
+
+    <div class="service">
+      <h3>Desenvolvimento de Apps</h3>
+      <p>Aplicativos modernos para Android e Web.</p>
+    </div>
+
+    <div class="service">
+      <h3>Websites</h3>
+      <p>Criação de sites profissionais e rápidos.</p>
+    </div>
+
+    <div class="service">
+      <h3>Inteligência Artificial</h3>
+      <p>Soluções modernas com IA para empresas e estudantes.</p>
+    </div>
+
+    <div class="service">
+      <h3>Design Digital</h3>
+      <p>Logos, identidade visual e branding tecnológico.</p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- CONTACTO -->
+
+<section id="contacto">
+
+  <div class="section-title">
+    <h2>Contacto</h2>
+    <p>Fale com a CastroTech</p>
+  </div>
+
+  <div class="contact">
+
+    <p>
+      Estamos disponíveis para criação de aplicativos,
+      websites e soluções digitais.
+    </p>
+
+    <a href="https://wa.me/244952722112"
+       class="btn"
+       target="_blank">
+
+       WhatsApp
+
+    </a>
+
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+  <h3 class="glow">CastroTech</h3>
+
+  <p>
+    Criando APPs para soluções diárias
+  </p>
+
+  <br>
+
+  <p>
+    Powered by CastroTech © 2026
+  </p>
+
+</footer>
+
+<script>
+
+  // SOM DOS BOTÕES
+
+  const buttons = document.querySelectorAll('.btn');
+
+  buttons.forEach(button => {
+
+    button.addEventListener('click', () => {
+
+      let audio = new Audio(
+        'https://www.soundjay.com/buttons/sounds/button-16.mp3'
+      );
+
+      audio.play();
+
+    });
+
+  });
+
+</script>
+
+</body>
+</html>
